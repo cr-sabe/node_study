@@ -1,11 +1,23 @@
-# node_study
-Node.jsによる気象情報閲覧システムの開発
+# Node.jsによる気象情報閲覧システムの開発
 
-## 実行方法
-1. Node.jsをインストール
-2. コマンドプロンプトで以下を実行
+## 作業手順記録
+
+### 初期構築
+1. Express.js による初期化
 ~~~
-$ node server.js
+$ npm install express-generator -g
+$ express --view=ejs node_study
+$ cd node_study
+$ npm install
 ~~~
 
-3. http://127.0.0.1:8080/ にアクセス
+2. 初期ファイル作成(app.js、index.html)
+
+
+## 起動方法
+1. コマンドから起動
+~~~
+$ DEBUG=login-app-ejs:* npm start
+~~~
+
+2. ブラウザで http://localhost:8080/ にアクセス
