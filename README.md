@@ -5,7 +5,7 @@
 ### 初期構築
 1. Express.js による初期化
 ~~~
-$ npm install express-generator -g
+$ npm install express-generator request -g
 $ express --view=ejs node_study
 $ cd node_study
 $ npm install
