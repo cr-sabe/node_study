@@ -6,8 +6,19 @@
   </head>
   <body>
     <h1>Node.jsによる気象情報閲覧システム</h1>
-	<div>
-		名古屋 = <%=current%>
-	</div>
+    <ul>
+      <%
+	  if (mapInfos) {
+		mapInfos.forEach(mapInfo => {
+	  %>
+		  <li><a href="/?location=<%= mapInfo.name %>"><%= mapInfo.name %></a></li>
+	  <%
+	    });
+	  }
+	  %>
+	</ul>
+	<% if (name) { %>
+    <div><%= name %> = <%= current.description %></div>
+	<% } %>
   </body>
 </html>
