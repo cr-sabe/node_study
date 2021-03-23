@@ -13,12 +13,14 @@ router.get('/', function(req, res, next) {
 			lat: 35.18028,
 			lon: 136.90667,
 			appid: APP_ID,
-			lang: "ja"
+			lang: "ja",
+			units: "metric"
 		}
 	};
 	request(option, function (error, response, body) {
+		var json = JSON.parse(body);
 		res.render('index', {
-			current: body.current.weather.main
+			current: json.current.weather[0].description
 		});
 	});
 });
