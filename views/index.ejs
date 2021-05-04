@@ -6,19 +6,14 @@
   </head>
   <body>
     <h1>Node.jsによる気象情報閲覧システム</h1>
-    <ul>
-      <%
-	  if (mapInfos) {
-		mapInfos.forEach(mapInfo => {
-	  %>
-		  <li><a href="/?location=<%= mapInfo.name %>"><%= mapInfo.name %></a></li>
-	  <%
-	    });
-	  }
-	  %>
-	</ul>
-	<% if (name) { %>
-    <div><%= name %> = <%= current.description %></div>
-	<% } %>
+	<img src="images/map.png" width="500" height="500">
+	<% dataList.forEach(data => { %>
+	<div>
+		Name: <%= data.name %><br>
+		Temp: <%= data.temp %><br>
+		Min: <%= data.tempMin %><br>
+		Max: <%= data.tempMax %><br>
+	</div>
+	<% }); %>
   </body>
 </html>
