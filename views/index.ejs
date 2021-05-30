@@ -11,13 +11,19 @@
 	<div style="position: relative;">
 		<img src="images/map.png" width="800" height="800">
 		<% dataList.forEach(data=> { %>
-			<div class="mapCard" style="left: <%= data.x %>px; top: <%= data.y %>px">
-				<span style="font-weight: bold;"><%= data.name %></span><br />
-				<span style="color: blue;"><%= data.tempMin %></span>
-				/
-				<span style="color: red;"><%= data.tempMax %></span>
+			<div class="mapCard" style="left: <%= data.x %>px; top: <%= data.y %>px" title="<%= data.name %>">
+				<img src="http://openweathermap.org/img/wn/<%= data.icon %>.png">
+				<div>
+					<span style="color: blue;">
+						<%= data.tempMin %>
+					</span>
+					/
+					<span style="color: red;">
+						<%= data.tempMax %>
+					</span>
+				</div>
 			</div>
-		<% }); %>
+			<% }); %>
 	</div>
 </body>
 

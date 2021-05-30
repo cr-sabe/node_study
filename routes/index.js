@@ -31,6 +31,7 @@ router.get("/", function (req, res, next) {
             weather: json.weather.description, // 天気名称
             tempMin: Number(json.main.temp_min).toFixed(1), // 最低気温
             tempMax: Number(json.main.temp_max).toFixed(1), // 最高気温
+            icon: json.weather[0].icon  // アイコン
           };
         })
       );
