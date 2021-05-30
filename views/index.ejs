@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <title>Node.jsによる気象情報閲覧システム</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <h1>Node.jsによる気象情報閲覧システム</h1>
-	<img src="images/map.png" width="500" height="500">
-	<% dataList.forEach(data => { %>
-	<div>
-		Name: <%= data.name %><br>
-		Temp: <%= data.temp %><br>
-		Min: <%= data.tempMin %><br>
-		Max: <%= data.tempMax %><br>
+
+<head>
+	<title>Node.jsによる気象情報閲覧システム</title>
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+	<h1>Node.jsによる気象情報閲覧システム</h1>
+	<div style="position: relative;">
+		<img src="images/map.png" width="800" height="800">
+		<% dataList.forEach(data=> { %>
+			<div class="mapCard" style="left: <%= data.x %>px; top: <%= data.y %>px">
+				<span style="font-weight: bold;"><%= data.name %></span><br />
+				<span style="color: blue;"><%= data.tempMin %></span>
+				/
+				<span style="color: red;"><%= data.tempMax %></span>
+			</div>
+		<% }); %>
 	</div>
-	<% }); %>
-  </body>
+</body>
+
 </html>
