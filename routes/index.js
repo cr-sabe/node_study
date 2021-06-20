@@ -26,6 +26,7 @@ router.get("/", function (req, res, next) {
         }).then(json => {
           return {
             name: mapInfo.name, // 都道府県名
+            cityID: mapInfo.cityID, // 都市ID
             x: mapInfo.x, // X座標
             y: mapInfo.y, // Y座標
             weather: json.weather.description, // 天気名称

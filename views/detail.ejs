@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<title>Node.jsによる気象情報閲覧システム</title>
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+	<h1>Node.jsによる気象情報閲覧システム</h1>
+	<h2><%= name %></h2>
+	<table border="1">
+		<tr>
+			<th>時間</th>
+			<th>天気</th>
+		</tr>
+		<% list.forEach(elem => { %>
+		<tr>
+			<th><%= elem.dt %></th>
+			<td><img src="http://openweathermap.org/img/wn/<%= elem.icon %>.png"></td>
+		</tr>
+		<% }); %>
+	</table>
+</body>
+
+</html>
